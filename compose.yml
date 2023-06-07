@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./SpringChatRoomBackEnd
+    image: chatroombackend
+    ports:
+      - "8080:8080"
+  frontend:
+    build: ./SpringChatRoomFrontEnd
+    image: chatroomfrontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  
